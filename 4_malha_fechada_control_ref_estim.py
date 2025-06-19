@@ -78,9 +78,9 @@ initial_tank_height = (spring_constant*initial_mass_position) / (fluid_density*g
 
 # Set start conditions
 u = np.array([0]) # No water flow at the beginning
-x = np.array([[initial_mass_position], [0], [0]]) # Move car 3 meters, fill tank to 1 m
+x = np.array([[initial_mass_position], [0], [0]])
 x_est = np.array([[initial_mass_position], [0], [0]])
-r = np.array([[3]]) # Set 5 meters to be mass position reference
+r = np.array([[3]]) # Set 3 meters to be mass position reference
 
 # Initialize arrays to store results
 X, U, T, X_est = x, u, t, x_est
