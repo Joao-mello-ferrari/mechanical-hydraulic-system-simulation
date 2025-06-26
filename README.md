@@ -1,3 +1,9 @@
+## Demo
+To access the simulation demo, please follow
+https://youtu.be/bVrPHuKIi-w
+![aberta](https://github.com/user-attachments/assets/f143c186-ffd3-43f0-929a-7a70ca6416f5)
+
+
 ## System Overview
 
 - **Mechanical Subsystem:** A mass attached to a spring and damper, representing a classic mass-spring-damper system.
