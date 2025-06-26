@@ -2,21 +2,22 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 WATER_DENSITY = 1000
+MERCURY_DENSITY = 13546
 
 # Tank
-fluid_density = WATER_DENSITY # kg/m^3
-gravity = 9.81                # m/s^2
-tank_area = 0.005               # m^2
+fluid_density = MERCURY_DENSITY # kg/m^3
+gravity = 9.81                  # m/s^2
+tank_area = 0.05                # m^2 (0.005 is a 7cm x 7cm square tank)
 
 # Pipe
-fluid_density = WATER_DENSITY  # kg/m^3
-pipe_length = 3                # m
+fluid_density = MERCURY_DENSITY  # kg/m^3
+pipe_length = 10                # m
 pipe_section_area = 0.00125664 # m^2
 
 # Mechanical system
 mass = 5               # kg
 spring_constant = 500   # N/m
-damping_constant = 30  # Ns/m
+damping_constant = 40  # Ns/m
 
 # Coupling system
 piston_area = pipe_section_area
@@ -44,7 +45,7 @@ C = np.array([[1, 0, 0], [0, 1, 0], [0, 0, 1]]) # We only observe z´, which is 
 D = np.array([[0]])
 
 # Simulation parameters
-t, tf, dt = 0, 10, .001 
+t, tf, dt = 0, 50, .001 
 
 # Start conditions
 u, x = np.array([0]), np.array([[2], [0], [gravity*fluid_density*1]]) # Move car 3 meters, fill tank to 1 m

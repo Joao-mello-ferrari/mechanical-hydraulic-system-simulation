@@ -3,22 +3,23 @@ import matplotlib.pyplot as plt
 from helpers.control import calculate_K
 from helpers.reference import calculate_N
 
-WATER_DENSITY = 10000
+WATER_DENSITY = 1000
+MERCURY_DENSITY = 13546
 
 # Tank
-fluid_density = WATER_DENSITY # kg/m^3
-gravity = 9.81                # m/s^2
-tank_area = 0.005             # m^2 (0.005 is a 7cm x 7cm square tank)
+fluid_density = MERCURY_DENSITY # kg/m^3
+gravity = 9.81                  # m/s^2
+tank_area = 0.05                # m^2 (0.005 is a 7cm x 7cm square tank)
 
 # Pipe
-fluid_density = WATER_DENSITY  # kg/m^3
-pipe_length = 3                # m
+fluid_density = MERCURY_DENSITY  # kg/m^3
+pipe_length = 10                # m
 pipe_section_area = 0.00125664 # m^2
 
 # Mechanical system
 mass = 5               # kg
-spring_constant = 50   # N/m
-damping_constant = 10  # Ns/m
+spring_constant = 500   # N/m
+damping_constant = 40  # Ns/m
 
 # Coupling system
 piston_area = pipe_section_area
@@ -44,13 +45,11 @@ D = np.array([[0]])
 
 # --------------------
 
-K = calculate_K(A, B, plot=False)
+K = calculate_K(A, B, poles_gain=10, plot=False)
 
 # --------------------
 
-x_dot_rows_num = 3
-r_rows_num = 1
-N = calculate_N(A, B, C[:1], D, K, x_dot_rows_num, r_rows_num)
+N = calculate_N(A, B, C[:1], D, K, A.shape[1], B.shape[1])
 
 # --------------------
 

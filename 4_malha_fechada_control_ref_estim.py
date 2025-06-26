@@ -11,8 +11,8 @@ MERCURY_DENSITY = 13546
 
 # Tank
 fluid_density = MERCURY_DENSITY # kg/m^3
-gravity = 9.81                # m/s^2
-tank_area = 0.05              # m^2 (0.005 is a 7cm x 7cm square tank)
+gravity = 9.81                  # m/s^2
+tank_area = 0.05                # m^2 (0.005 is a 7cm x 7cm square tank)
 
 # Pipe
 fluid_density = MERCURY_DENSITY  # kg/m^3
@@ -68,7 +68,7 @@ L = calculate_L(A, C[:1], poles_gain=20, plot=True)
 # --------------------
 
 # Simulation parameters
-t, tf, dt = 0, 50, .001 
+t, tf, dt = 0, 15, .001 
 
 # Start conditions. We assume there is someone only pulling/pushing the spring.
 # The tank height should reflect that mass position
@@ -78,9 +78,9 @@ initial_tank_height = (spring_constant*initial_mass_position) / (fluid_density*g
 
 # Set start conditions
 u = np.array([0]) # No water flow at the beginning
-x = np.array([[initial_mass_position], [0], [0]])
+x = np.array([[initial_mass_position], [-2], [initial_tank_height]])
 x_est = np.array([[initial_mass_position], [0], [0]])
-r = np.array([[3]]) # Set 3 meters to be mass position reference
+r = np.array([[5]]) # Set 3 meters to be mass position reference
 
 # Initialize arrays to store results
 X, U, T, X_est = x, u, t, x_est
