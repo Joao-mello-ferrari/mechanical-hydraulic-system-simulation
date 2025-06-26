@@ -1,6 +1,6 @@
 ## Demo
-To access the simulation demo, please follow
-https://youtu.be/bVrPHuKIi-w
+To access the simulation demo, please follow https://youtu.be/bVrPHuKIi-w<br>
+To check out our mathematical dedcution, please refer to this [doc](https://github.com/Joao-mello-ferrari/mechanical-hydraulic-system-simulation/blob/main/MATHEMATICAL_DEDUCTION.md)
 ![aberta](https://github.com/user-attachments/assets/f143c186-ffd3-43f0-929a-7a70ca6416f5)
 
 
