@@ -35,7 +35,7 @@ _E = fluid_density*gravity / tank_area
 A = np.array([
     [ 0,       1,       0  ],
     [ -_C/_A,  -_B/_A,  1/_A ],
-    [ 0,       -_D,     0  ]
+    [ 0,       _D,     0  ]
 ])
 
 print(np.linalg.eigvals(A))

@@ -40,7 +40,7 @@ _E = fluid_density*gravity / tank_area
 A = np.array([
     [ 0,       1,       0  ],
     [ -_C/_A,  -_B/_A,  1/_A ],
-    [ 0,       -_D,     0  ]
+    [ 0,       _D,     0  ]
 ])
 B = np.array([[0], [0], [_E]]) # Command gain = E
 C = np.array([[1, 0, 0], [0, 1, 0], [0, 0, 1]]) # We can observe all states: mass position, mass speed, and tank pressure
