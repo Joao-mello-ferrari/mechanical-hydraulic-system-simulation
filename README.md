@@ -49,13 +49,26 @@ To check out our mathematical deduction, please refer to this [doc](https://gith
 1. Install dependencies:
 
 ```bash
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+make install
 ```
 
-2. Run the simulation:
+2. Run the desired simulation:
 
-```bash
-make run
-```
+- **Open loop:**  
+  ```bash
+  make run/1
+  ```
+- **Closed loop (state feedback):**  
+  ```bash
+  make run/2
+  ```
+- **Closed loop with reference tracking:**  
+  ```bash
+  make run/3
+  ```
+- **Closed loop with reference tracking and state estimation:**  
+  ```bash
+  make run/4
+  ```
+
+---
